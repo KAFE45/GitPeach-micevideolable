@@ -1,0 +1,9 @@
+name: mice-videomarker
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - opencv
+  - python=3.12
+  - icecream
+prefix: /Users/peachiia/miniforge3/envs/mice-videomarker

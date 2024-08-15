@@ -1,0 +1,89 @@
+{
+    "type" : "mice-config",
+    "version" : 1,
+    "mesh" : {
+        "references" : [
+            {
+                "id" : "point_origin",
+                "description" : "The origin of the grid",
+                "type" : "point",
+                "parameters" : {}
+            },
+            {
+                "id" : "axis_feeder",
+                "description" : "Perspective Line from the origin to the feeder tunnel, 5 units away",
+                "type" : "unitaxis",
+                "parameters" : {
+                    "pivot" : "point_origin",
+                    "unitlength" : 5
+                }
+            },
+            {
+                "id" : "axis_camera",
+                "description" : "Perspective Line from the origin to the camera axis, 5 units away",
+                "type" : "unitaxis",
+                "parameters" : {
+                    "pivot" : "point_origin",
+                    "unitlength" : 5
+                }
+            },
+            {
+                "id" : "axis_upward,",
+                "description" : "Perspective Line from the origin to upward, perpendicular to the ground, 5 units away",
+                "type" : "unitaxis",
+                "parameters" : {
+                    "pivot" : "point_origin",
+                    "unitlength" : 5
+                }
+            },
+            {
+                "id" : "warp_backgrid_5",
+                "description" : "Reference point at (5,5) on feeder-upward axis (Back Grid)",
+                "type" : "unitwarp",
+                "parameters" : {
+                    "templateaxis" : "axis_feeder",
+                    "unitlength" : 5,
+                    "shadowaxis" : "axis_upward",
+                    "unitdistance" : 5
+                }
+            },
+            {
+                "id" : "warp_floorgrid_1",
+                "description" : "Reference point at (5,1) on feeder-camera axis (Floor Grid, center line of feeder tunnel)",
+                "type" : "unitwarp",
+                "parameters" : {
+                    "templateaxis" : "axis_feeder",
+                    "unitlength" : 5,
+                    "shadowaxis" : "axis_camera",
+                    "unitdistance" : 1
+                }
+            }
+        ],
+        "markers" : [
+            {
+                "id" : "pellet",
+                "description" : "The food pellet"
+            },
+            {
+                "id" : "nosetip",
+                "description" : "The nose tip of the animal"
+            },
+            {
+                "id" : "finger_tip_right",
+                "description" : "The tip of the right middle finger"
+            },
+            {
+                "id" : "finger_thumb_right",
+                "description" : "The tip of the Right Thumb"
+            },
+            {
+                "id" : "palm_right",
+                "description" : "The palm of the right hand"
+            },
+            {
+                "id" : "finger_tip_left",
+                "description" : "The tip of the LEFT middle finger"
+            }
+        ]
+    }
+}
